@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="src.appLIFIA.src.Producto" table="productos"> 
+	<id name="id" column="EVENT_ID">
+        	<generator class="native"/>
+	<property name="nombre"/>
+        <property name="peso"/>
+	<property name="precio"/>
+	<property name="historial"/>
+	<list name="historial" table="PRODUCTOS" lazy="true" >
+		<key column="id"/>
+		<element type="DOUBLE" column="HISTORIAL" not-null="true"/>
+	</list>
+	<property name="fechaPrecioInicio" type="timestamp" column="EVENT_FECHAPRECIOINICIO"/>
+	<property name="fechaPrecioFin" type="timestamp" column="EVENT_FECHAPRECIOFIN"/>
+</class>
+
+</hibernate-mapping>

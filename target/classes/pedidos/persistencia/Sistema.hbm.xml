@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="src.appLIFIA.src.Sistema" table="sistemas"> 
+		<id name="id" type="long" unsaved-value="0">
+		    <column name="id" sql-type="BIGINT" not-null="true">
+			<generator class="native"/>
+		<list name="usuarios" cascade="save-update">
+		    <key column="idSistema" foreign-key="FK_SIS_US"/>
+		    <one-to-many class="src.appLIFIA.src.Usuario"/>
+		</list>
+		<list name="proveedores" cascade="save-update">
+		    <key column="idSistema" foreign-key="FK_SIS_PRO"/>
+		    <one-to-many class="src.appLIFIA.src.Proveedor"/>
+		</list>
+	</class>
+</hibernate-mapping>

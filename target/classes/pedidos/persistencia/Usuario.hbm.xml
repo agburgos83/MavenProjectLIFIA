@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="src.appLIFIA.src.Usuario" table="usuarios"> 
+		<id name="id" column="id">
+			<generator class="native"/>
+		<property name="username"/>
+		<property name="password"/>
+		<property name="nombre"/>
+		<property name="mail"/>
+		<property name="fechaNacimiento" type="timestamp" column="EVENT_FECHANACIMIENTO"/>
+		<subclass name="src.appLIFIA.src.Repartidor" discriminator-value="R"/>
+		<subclass name="src.appLIFIA.src.Comprador" discriminator-value="C"/>
+	</class>
+</hibernate-mapping>

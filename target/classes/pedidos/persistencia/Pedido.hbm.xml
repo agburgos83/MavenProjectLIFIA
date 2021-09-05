@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="src.appLIFIA.src.Pedido" table="pedidos"> 
+		<id name="id" column="EVENT_ID">
+			<generator class="native"/>
+		<property name="nombre"/>
+		<property name="cuil"/>
+		<property name="direccion"/>
+		<property name="coordenadaX"/>
+		<property name="coordenadaY"/>
+		<one-to-one name ="producto" class="src.appLIFIA.src.Producto" column="idProducto" foreign-key="FK_PRO_PE" cascade="save-update"/>
+	</class>
+</hibernate-mapping>

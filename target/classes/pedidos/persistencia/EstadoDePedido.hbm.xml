@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="src.appLIFIA.src.Usuario" table="usuarios"> 
+		<id name="id" column="id">
+			<generator class="native"/>
+		<property name="nombreEstado"/>
+		<subclass name="src.appLIFIA.src.Estado1Pendiente" discriminator-value="E1"/>
+		<subclass name="src.appLIFIA.src.Estado2Preparado" discriminator-value="E2"/>
+		<subclass name="src.appLIFIA.src.Estado3Entregado" discriminator-value="E3"/>
+		<subclass name="src.appLIFIA.src.Estado4Cancelado" discriminator-value="E4"/>
+	</class>
+</hibernate-mapping>
