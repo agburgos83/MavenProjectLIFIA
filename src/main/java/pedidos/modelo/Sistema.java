@@ -6,8 +6,8 @@ import java.util.LinkedList;
 public class Sistema {
 
 	private long id;
-	private LinkedList usuarios;
-	private LinkedList proveedores;
+	private LinkedList<Usuario> usuarios;
+	private LinkedList<Proveedor> proveedores;
 
 	public static void main(String[] args) {
 
@@ -52,7 +52,7 @@ public class Sistema {
 		return id;
 	}
 
-	private void setId(Long id) {
+	private void setId(long id) {
 		this.id = id;
 	}
 

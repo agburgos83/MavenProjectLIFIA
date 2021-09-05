@@ -17,8 +17,9 @@ abstract class Usuario {
 	}
 
 	// CONSTRUCTOR PUBLICO
-	public Usuario(String username, String password, String nombre, String mail, int fechaNacimiento) {
+	public Usuario(long id, String username, String password, String nombre, String mail, int fechaNacimiento) {
 
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.nombre = nombre;
@@ -79,7 +80,7 @@ abstract class Usuario {
 		return id;
 	}
 
-	private void setId(Long id) {
+	private void setId(long id) {
 		this.id = id;
 	}
 

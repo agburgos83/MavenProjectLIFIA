@@ -14,8 +14,9 @@ public class Proveedor {
 	}
 
 	// CONSTRUCTOR PUBLICO
-	public Proveedor(String unNombre, int unCuil, String unaDireccion, Integer unaCoordenadaX, Integer unaCoordenadaY) {
+	public Proveedor(long unId, String unNombre, int unCuil, String unaDireccion, Integer unaCoordenadaX, Integer unaCoordenadaY) {
 
+		id = unId;
 		nombre = unNombre;
 		cuil = unCuil;
 		direccion = unaDireccion;
@@ -67,8 +68,8 @@ public class Proveedor {
 		return id;
 	}
 
-	private void setId(Long id) {
-		this.id = id;
+	private void setId(long unId) {
+		this.id = unId;
 	}
 
 }
