@@ -1,23 +1,27 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.util.*;
+import javax.persistence.*;
 
+@MappedSuperclass
 abstract class Usuario {
 
 	// ATRIBUTOS
-	private long id;
+	@Id
+	private Long id;
 	private String username;
 	private String password;
 	private String nombre;
 	private String mail;
-	private int fechaNacimiento;
+	private Date fechaNacimiento;
 	private LinkedList<Pedido> pedidos;
 
 	public Usuario() {
 	}
 
 	// CONSTRUCTOR PUBLICO
-	public Usuario(long id, String username, String password, String nombre, String mail, int fechaNacimiento) {
+	public Usuario(Long id, String username, String password, String nombre, String mail, Date fechaNacimiento) {
 
 		this.id = id;
 		this.username = username;
@@ -60,11 +64,11 @@ abstract class Usuario {
 		this.mail = mail;
 	}
 
-	public int getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(int fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -80,7 +84,7 @@ abstract class Usuario {
 		return id;
 	}
 
-	private void setId(long id) {
+	private void setId(Long id) {
 		this.id = id;
 	}
 

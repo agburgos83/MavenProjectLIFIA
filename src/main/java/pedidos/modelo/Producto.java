@@ -1,10 +1,15 @@
 package pedidos.modelo;
 
+import java.util.LinkedList;
 import java.util.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
 
+@Entity
 public class Producto {
 
-	private long id;
+	@Id
+	private Long id;
 	private String nombre;
 	private float peso;
 	private float precio;
@@ -15,8 +20,9 @@ public class Producto {
 	public Producto() {
 	}
 
-	public Producto(String unNombre, float unPeso, float unPrecio, LinkedList<Float> unHistorial,
+	public Producto(Long unId, String unNombre, float unPeso, float unPrecio, LinkedList<Float> unHistorial,
 			Date unaFechaPrecioInicio, Date unaFechaPrecioFin) {
+		setId(unId);
 		setNombre(unNombre);
 		setPeso(unPeso);
 		setPrecio(unPrecio);

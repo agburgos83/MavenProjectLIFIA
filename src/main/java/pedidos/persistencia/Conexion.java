@@ -32,7 +32,7 @@ public class Conexion {
 
             Configuration configuration = new Configuration();
             configuration.setProperties(props);
-            configuration.configure("hibernate.appLIFIA.cfg.xml");
+            configuration.configure("hibernate.pedidos.cfg.xml");
 
 //            new SchemaUpdate(configuration).execute(true, true);
 //            new SchemaExport(configuration).create(true, true);

@@ -1,5 +1,10 @@
 package pedidos.modelo;
 
+import java.util.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
+
+@Entity
 public class Estado1Pendiente extends EstadoDePedido {
 
 	public Estado1Pendiente() {

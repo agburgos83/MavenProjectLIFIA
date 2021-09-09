@@ -1,20 +1,28 @@
 package pedidos.modelo;
 
+import java.util.LinkedList;
+import java.util.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
+
+@Entity
 public class Proveedor {
 
-	// ATRIBUTOS
-	private long id;
+	@Id
+	private Long id;
 	private String nombre;
 	private int cuil;
 	private String direccion;
 	private Integer coordenadaX;
 	private Integer coordenadaY;
+	private LinkedList<Producto> productos;
 
 	public Proveedor() {
+		LinkedList<Producto> productos = new LinkedList();
 	}
 
 	// CONSTRUCTOR PUBLICO
-	public Proveedor(long unId, String unNombre, int unCuil, String unaDireccion, Integer unaCoordenadaX, Integer unaCoordenadaY) {
+	public Proveedor(Long unId, String unNombre, int unCuil, String unaDireccion, Integer unaCoordenadaX, Integer unaCoordenadaY) {
 
 		id = unId;
 		nombre = unNombre;
@@ -68,8 +76,13 @@ public class Proveedor {
 		return id;
 	}
 
-	private void setId(long unId) {
+	private void setId(Long unId) {
 		this.id = unId;
 	}
+	
+	public LinkedList<Producto> getProductosY() {
+		return productos;
+	}
+
 
 }

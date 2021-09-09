@@ -1,5 +1,11 @@
 package pedidos.modelo;
 
+import java.util.LinkedList;
+import java.util.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
+
+@Entity
 public class Comprador extends Usuario {
 
 	// atributos

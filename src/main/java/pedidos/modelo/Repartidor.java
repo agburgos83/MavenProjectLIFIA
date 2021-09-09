@@ -1,7 +1,10 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.util.*;
+import javax.persistence.*;
 
+@Entity
 public class Repartidor extends Usuario {
 
 	// atributos

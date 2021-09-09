@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+        <mapping resource="pedidos/persistencia/EstadoDePedido.hbm.xml"/>
+        <mapping resource="pedidos/persistencia/Pedido.hbm.xml"/>
+        <mapping resource="pedidos/persistencia/Producto.hbm.xml"/>
+        <mapping resource="pedidos/persistencia/Proveedor.hbm.xml"/>
+        <mapping resource="pedidos/persistencia/Sistema.hbm.xml"/>
+        <mapping resource="pedidos/persistencia/Usuario.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

@@ -1,24 +1,35 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.util.*;
+import javax.persistence.*;
+
 
 @SuppressWarnings("rawtypes")
+@Entity
 public class Sistema {
 
-	private long id;
-	private LinkedList<Usuario> usuarios;
+	@Id
+	private Long id;
+	
+	private LinkedList<Comprador> compradores;
+	
+	private LinkedList<Repartidor> repartidores;
+	
 	private LinkedList<Proveedor> proveedores;
 
 	public static void main(String[] args) {
 
 		Sistema soleInstance = new Sistema();
-		LinkedList<Usuario> usuarios;
+		LinkedList<Comprador> compradores;
+		LinkedList<Repartidor> repartidores;
 		LinkedList<Proveedor> proveedores;
 	}
 
 	// CONSTRUCTOR PUBLICO
 	private Sistema() {
-		LinkedList<Usuario> usuarios = new LinkedList();
+		LinkedList<Comprador> compradores = new LinkedList();
+		LinkedList<Comprador> repartidores = new LinkedList();
 		LinkedList<Proveedor> proveedores = new LinkedList();
 	}
 
@@ -32,10 +43,14 @@ public class Sistema {
 		}
 	}
 
-	public LinkedList getUsuarios() {
-		return usuarios;
+	public LinkedList getCompradores() {
+		return compradores;
 	}
 
+	public LinkedList getRepartidores() {
+		return repartidores;
+	}
+	
 	public LinkedList getProveedores() {
 		return proveedores;
 	}
@@ -44,15 +59,20 @@ public class Sistema {
 		proveedores.add(unProveedor);
 	}
 
-	public void addUsuario(Usuario unUsuario) {
-		usuarios.add(unUsuario);
+	public void addComprador(Comprador unComprador) {
+		compradores.add(unComprador);
 	}
+	
+	public void addRepartidor(Repartidor unRepartidor) {
+		repartidores.add(unRepartidor);
+	}
+
 
 	public Long getId() {
 		return id;
 	}
 
-	private void setId(long id) {
+	private void setId(Long id) {
 		this.id = id;
 	}
 

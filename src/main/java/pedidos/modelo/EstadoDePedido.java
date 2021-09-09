@@ -1,8 +1,15 @@
 package pedidos.modelo;
 
+import java.util.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class EstadoDePedido {
 
-	private long id;
+	@Id
+	private Long id;
 
 	private String nombreEstado;
 
