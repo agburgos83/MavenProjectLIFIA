@@ -28,9 +28,9 @@ public class Sistema {
 
 	// CONSTRUCTOR PUBLICO
 	private Sistema() {
-		LinkedList<Comprador> compradores = new LinkedList();
-		LinkedList<Comprador> repartidores = new LinkedList();
-		LinkedList<Proveedor> proveedores = new LinkedList();
+		LinkedList<Comprador> compradores = new LinkedList<Comprador>();
+		LinkedList<Comprador> repartidores = new LinkedList<Comprador>();
+		LinkedList<Proveedor> proveedores = new LinkedList<Proveedor>();
 	}
 
 	public static Sistema getInstance() {

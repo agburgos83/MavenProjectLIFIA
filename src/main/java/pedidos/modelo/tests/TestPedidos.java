@@ -1,9 +1,11 @@
 package pedidos.modelo.tests;
 
 import java.util.List;
-import javax.persistence.*;
 import javax.persistence.Persistence;
 import pedidos.modelo.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
 
 public class TestPedidos {
 	
@@ -12,19 +14,19 @@ public class TestPedidos {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		// se crea el gestor de persistencia
 		
-		try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+		// CREACION DEL GESTOR DE PERSISTENCIA
 		
 		emf = Persistence.createEntityManagerFactory("PedidosLIFIAPlayground");
 		manager = emf.createEntityManager();
 		
-		List <Pedido> pedidos = (List<Pedido>) manager.createQuery("From Pedido").getResultList();
+		try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+		
+		List <Pedido> pedidos = (List<Pedido>) manager.createQuery("FROM Pedido").getResultList();
 		System.out.println("En esta BD hay "+ pedidos.size()+ " pedidos.");
 	}
 

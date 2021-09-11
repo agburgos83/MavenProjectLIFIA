@@ -1,20 +1,39 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @MappedSuperclass
-abstract class Usuario {
+@Table(name = "USUARIOS")
+public class Usuario implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
 	// ATRIBUTOS
 	@Id
+	@Column(name = "ID_USUARIO")
 	private Long id;
+	
+	@Column(name = "USERNAME")
 	private String username;
+	
+	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "NOMBRE")
 	private String nombre;
+	
+	@Column(name = "MAIL")
 	private String mail;
+	
+	@Column(name = "FECHA_NACIMIENTO")
 	private Date fechaNacimiento;
+	
 	private LinkedList<Pedido> pedidos;
 
 	public Usuario() {
