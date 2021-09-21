@@ -2,7 +2,7 @@ package pedidos.modelo.tests;
 
 import java.util.List;
 import javax.persistence.*;
-import javax.persistence.Persistence;
+
 import pedidos.modelo.*;
 
 public class TestPedidos {
