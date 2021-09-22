@@ -21,7 +21,7 @@ public class TestPedidos {
             e.printStackTrace();
         }
 		
-		emf = Persistence.createEntityManagerFactory("PedidosLIFIAPlayground");
+		emf = Persistence.createEntityManagerFactory("db");
 		manager = emf.createEntityManager();
 		
 		List <Pedido> pedidos = (List<Pedido>) manager.createQuery("From Pedido").getResultList();

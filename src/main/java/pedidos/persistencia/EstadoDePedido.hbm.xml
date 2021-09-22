@@ -8,13 +8,18 @@
 			<generator class="native" />
 		</id>
 		<property name="nombreEstado" />
+
 		<subclass name="pedidos.modelo.Estado1Pendiente"
 			discriminator-value="E1" />
+			
 		<subclass name="pedidos.modelo.Estado2Preparado"
 			discriminator-value="E2" />
+			
 		<subclass name="pedidos.modelo.Estado3Entregado"
 			discriminator-value="E3" />
+			
 		<subclass name="pedidos.modelo.Estado4Cancelado"
 			discriminator-value="E4" />
+			
 	</class>
 </hibernate-mapping>
