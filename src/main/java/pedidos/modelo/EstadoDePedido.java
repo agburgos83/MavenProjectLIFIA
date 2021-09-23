@@ -1,33 +1,30 @@
 package pedidos.modelo;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @MappedSuperclass
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class EstadoDePedido {
+public abstract class EstadoDePedido implements Serializable {
 
 	@Id
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
 	private String nombreEstado;
 
 	public static void main(String[] args) {
 	}
 
-	public abstract void enviar();{
-	}
+	public abstract void enviar();
 
-	public abstract void entregar();{
-	}
+	public abstract void entregar();
 
-	public abstract void cancelar();{
-	}
 
+	public abstract void cancelar();
+	
 	public void setNombreEstado(String unNombre) {
 		nombreEstado = unNombre;
 	}

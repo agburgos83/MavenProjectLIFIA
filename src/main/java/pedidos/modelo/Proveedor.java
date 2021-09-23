@@ -1,12 +1,13 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.Entity; 
 import javax.persistence.Id;
 
 @Entity
-public class Proveedor {
+public class Proveedor implements Serializable {
 
 	@Id
 	private Long id;

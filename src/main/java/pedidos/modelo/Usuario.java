@@ -1,15 +1,20 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.*;
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @MappedSuperclass
-abstract class Usuario {
+abstract class Usuario implements Serializable {
 
-	// ATRIBUTOS
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
 	private String username;
 	private String password;
 	private String nombre;

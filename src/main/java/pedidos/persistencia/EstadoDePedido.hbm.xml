@@ -4,22 +4,26 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="pedidos.modelo.EstadoDePedido" table="estados">
-		<id name="id" column="id">
+
+		<id name="id" column="ID_ESTADO">
 			<generator class="native" />
 		</id>
+
+		<discriminator column="tipo_estado" length="1" />
+
 		<property name="nombreEstado" />
 
 		<subclass name="pedidos.modelo.Estado1Pendiente"
 			discriminator-value="E1" />
-			
+
 		<subclass name="pedidos.modelo.Estado2Preparado"
 			discriminator-value="E2" />
-			
+
 		<subclass name="pedidos.modelo.Estado3Entregado"
 			discriminator-value="E3" />
-			
+
 		<subclass name="pedidos.modelo.Estado4Cancelado"
 			discriminator-value="E4" />
-			
+
 	</class>
 </hibernate-mapping>
