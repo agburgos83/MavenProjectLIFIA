@@ -9,7 +9,7 @@
 	<persistence-unit name="db">
 	
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
-
+	
 		<class>pedidos.modelo.Comprador </class>
 		<class>pedidos.modelo.Estado1Pendiente </class>
 		<class>pedidos.modelo.Estado2Preparado </class>
@@ -22,35 +22,6 @@
 		<class>pedidos.modelo.Sistema </class>
 
 
-		<!-- 
-		<properties>
-
-			<property name="hibernate.connection.driver_class"
-				value="com.mysql.jdbc.Driver" />
-
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc.mysql://localhost:3306/db?useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
-
-			<property name="javax.persistence.jdbc.user"
-				value="mysql_user" />
-
-			<property name="javax.persistence.jdbc.password"
-				value="mysql_password" />
-
-			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.MySQL5Dialect" />
-
-			<property name="hibernate.hbm2ddl.auto" value="validate" />
-
-			<property
-				name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
-
-		</properties>
-		-->
 	</persistence-unit>
 
 </persistence>

@@ -7,8 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 @MappedSuperclass
+@Table
+@Inheritance(strategy = InheritanceType.JOINED)
 abstract class Usuario implements Serializable {
 
 	@Id

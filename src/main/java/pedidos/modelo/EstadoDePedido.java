@@ -5,13 +5,18 @@ import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 @MappedSuperclass
+@Table
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class EstadoDePedido implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 
 	private String nombreEstado;
 

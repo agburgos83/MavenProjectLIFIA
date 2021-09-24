@@ -4,9 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="pedidos.modelo.Usuario" table="usuarios">
-		<id name="id" column="id">
+		<id name="id" type="Long" column="id">
 			<generator class="native" />
 		</id>
+		<discriminator column="TIPO_USUARIO" type="string"/>
 		<property name="username" />
 		<property name="password" />
 		<property name="nombre" />

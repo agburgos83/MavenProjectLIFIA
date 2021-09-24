@@ -12,11 +12,8 @@ public class Sistema implements Serializable  {
 
 	@Id
 	private Long id;
-	
 	private LinkedList<Comprador> compradores;
-	
 	private LinkedList<Repartidor> repartidores;
-	
 	private LinkedList<Proveedor> proveedores;
 
 	public static void main(String[] args) {
