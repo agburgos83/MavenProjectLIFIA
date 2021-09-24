@@ -33,6 +33,7 @@ public class Conexion {
             Configuration configuration = new Configuration();
             configuration.setProperties(props);
             configuration.configure("hibernate.pedidos.cfg.xml");
+          //  configuration.configure("hibernate.properties");
 
 //            new SchemaUpdate(configuration).execute(true, true);
 //            new SchemaExport(configuration).create(true, true);

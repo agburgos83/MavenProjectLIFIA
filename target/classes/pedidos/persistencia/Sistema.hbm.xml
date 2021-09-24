@@ -13,7 +13,7 @@
 		</bag>
 		<bag name="repartidores" cascade="save-update">
 			<key column="idSistema" foreign-key="FK_SIS_US" />
-			<one-to-many class="Repartidor" />
+			<one-to-many class="pedidos.modelo.Repartidor" />
 		</bag>
 		<bag name="proveedores" cascade="save-update">
 			<key column="idSistema" foreign-key="FK_SIS_PRO" />

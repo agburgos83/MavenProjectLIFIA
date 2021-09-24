@@ -3,18 +3,23 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="pedidos.modelo.EstadoDePedido" table="estados">
-		<id name="id" column="id">
+	<class name="pedidos.modelo.EstadoDePedido" table="estados" abstract="true">
+
+		<id name="id" column="ID_ESTADO">
 			<generator class="native" />
 		</id>
-		<property name="nombreEstado" />
+
+		<discriminator column="tipo_estado" type="string" />
+
+		<!-- <property name="nombreEstado" column="nombre_estado"/>  -->
 		<subclass name="pedidos.modelo.Estado1Pendiente"
-			discriminator-value="E1" />
+			discriminator-value="Pendiente" />
 		<subclass name="pedidos.modelo.Estado2Preparado"
-			discriminator-value="E2" />
+			discriminator-value="Preparado" />
 		<subclass name="pedidos.modelo.Estado3Entregado"
-			discriminator-value="E3" />
+			discriminator-value="Entregado" />
 		<subclass name="pedidos.modelo.Estado4Cancelado"
-			discriminator-value="E4" />
+			discriminator-value="Cancelado" />
+
 	</class>
 </hibernate-mapping>

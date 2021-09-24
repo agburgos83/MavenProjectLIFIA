@@ -3,23 +3,24 @@ package pedidos.modelo;
 import java.util.LinkedList;
 import java.io.Serializable;
 import java.util.*;
-import javax.persistence.*;
-import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @MappedSuperclass
-@Table(name = "USUARIOS")
-public class Usuario implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+@Table
+@Inheritance(strategy = InheritanceType.JOINED)
+abstract class Usuario implements Serializable {
 
-	// ATRIBUTOS
+
 	@Id
-	@Column(name = "ID_USUARIO")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name = "USERNAME")
+
 	private String username;
 	
 	@Column(name = "PASSWORD")

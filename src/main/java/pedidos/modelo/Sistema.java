@@ -1,21 +1,19 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.*;
 
 
 @SuppressWarnings("rawtypes")
 @Entity
-public class Sistema {
+public class Sistema implements Serializable  {
 
 	@Id
 	private Long id;
-	
 	private LinkedList<Comprador> compradores;
-	
 	private LinkedList<Repartidor> repartidores;
-	
 	private LinkedList<Proveedor> proveedores;
 
 	public static void main(String[] args) {

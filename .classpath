@@ -34,6 +34,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="\MavenProjectLIFIA\lib\sqlg-mysql-dialect-2.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/sqlg-mysql-dialect-2.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/apache-log4j-2.14.1-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.11.0-src.zip"/>
+	<classpathentry kind="lib" path="/media/agus/datos/2 - proyectos/capacitación LIFIA/PedidosLIFIA/lib/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

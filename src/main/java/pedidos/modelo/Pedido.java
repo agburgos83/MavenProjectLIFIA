@@ -15,10 +15,8 @@ import java.util.*;
  */
 
 @Entity
-@Table(name = "PEDIDOS")
+
 public class Pedido implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "ID_PEDIDO")

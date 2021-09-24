@@ -5,7 +5,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-	<persistence-unit name="PedidosLIFIAPlayground">
+	<persistence-unit name="db">
+	
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 	
 		<class>pedidos.modelo.Comprador </class>
 		<class>pedidos.modelo.Estado1Pendiente </class>
@@ -17,17 +19,7 @@
 		<class>pedidos.modelo.Proveedor </class>
 		<class>pedidos.modelo.Repartidor </class>
 		<class>pedidos.modelo.Sistema </class>
-		
-		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/PedidosLIFIAPlayground?useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
-			<property name="javax.persistence.jdbc.user" value="hibernate_user" />
-			<property name="javax.persistence.jdbc.password" value="hibernatePassword" />
-			
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
-		</properties>
+
 	</persistence-unit>
 
 </persistence>
