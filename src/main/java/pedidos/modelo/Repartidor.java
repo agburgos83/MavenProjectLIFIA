@@ -1,11 +1,13 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 import java.util.*;
-import javax.persistence.*;
+import javax.persistence.Entity; 
+import javax.persistence.Id;
 
 @Entity
-public class Repartidor extends Usuario {
+public class Repartidor extends Usuario implements Serializable {
 
 	// CONSTRUCTOR PUBLICO
 	public Repartidor() {

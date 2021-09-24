@@ -3,23 +3,40 @@ package pedidos.modelo;
 import java.util.LinkedList;
 import java.io.Serializable;
 import java.util.*;
+import javax.persistence.Column;
 import javax.persistence.Entity; 
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 public class Proveedor implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
+	//	ATRIBUTOS
 	@Id
+	@Column(name = "ID_PROVEEDOR")
 	private Long id;
+	
+	@Column(name = "NOMBRE")
 	private String nombre;
+	
+	@Column(name = "CUIL")
 	private int cuil;
+	
+	@Column(name = "DIRECICON")
 	private String direccion;
+	
+	@Column(name = "COORDENADA_X")
 	private Integer coordenadaX;
+	
+	@Column(name = "COORDENADA_Y")
 	private Integer coordenadaY;
+	
 	private LinkedList<Producto> productos;
 
 	public Proveedor() {
-		LinkedList<Producto> productos = new LinkedList();
+		LinkedList<Producto> productos = new LinkedList<Producto>();
 	}
 
 	// CONSTRUCTOR PUBLICO

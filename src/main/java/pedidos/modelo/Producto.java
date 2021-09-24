@@ -3,19 +3,34 @@ package pedidos.modelo;
 import java.util.LinkedList;
 import java.io.Serializable;
 import java.util.*;
+import javax.persistence.Column;
 import javax.persistence.Entity; 
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 public class Producto implements Serializable {
 
 	@Id
+	@Column(name = "ID_PRODUCTO")
 	private Long id;
+	
+	@Column(name = "NOMBRE")
 	private String nombre;
+	
+	@Column(name = "PESO")
 	private float peso;
+	
+	@Column(name = "PRECIO")
 	private float precio;
+	
+//	SI FECHA INICIO Y FECHA FIN SON PARTE DEL HISTORIAL - CREAR NUEVA TABLA DE HISTORIAL
 	private LinkedList<Float> historial;
+	
+	@Column(name = "FECHA_PRECIO_INICIO")
 	private Date fechaPrecioInicio;
+	
+	@Column(name = "FECHA_PRECIO_FINAL")
 	private Date fechaPrecioFin;
 
 	public Producto() {

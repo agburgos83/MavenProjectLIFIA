@@ -1,10 +1,13 @@
 package pedidos.modelo;
 
 import java.util.LinkedList;
-import java.io.Serializable;
-import java.util.*;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.*;
+
 
 /**
  * @author agus
@@ -12,12 +15,20 @@ import javax.persistence.Id;
  */
 
 @Entity
+
 public class Pedido implements Serializable {
 
 	@Id
+	@Column(name = "ID_PEDIDO")
 	private Long id;
+	
+	@Column(name = "CANTIDAD")
 	private Integer cantidad;
+	
+	@Column(name = "ESTADO_PEDIDO")
 	private EstadoDePedido estadoActual;
+	
+	@Column(name = "PRODUCTO")
 	private Producto producto;
 
 	public Pedido() {

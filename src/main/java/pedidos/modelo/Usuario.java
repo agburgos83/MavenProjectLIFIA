@@ -16,15 +16,25 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 abstract class Usuario implements Serializable {
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String username;
+	
+	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "NOMBRE")
 	private String nombre;
+	
+	@Column(name = "MAIL")
 	private String mail;
+	
+	@Column(name = "FECHA_NACIMIENTO")
 	private Date fechaNacimiento;
+	
 	private LinkedList<Pedido> pedidos;
 
 	public Usuario() {
